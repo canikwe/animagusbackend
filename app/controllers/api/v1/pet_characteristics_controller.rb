@@ -1,2 +1,2 @@
-class Api::V1::PetAttributesController < ApplicationController
+class Api::V1::PetCharacteristicsController < ApplicationController
 end
