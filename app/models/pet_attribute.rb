@@ -1,2 +1,0 @@
-class PetAttribute < ApplicationRecord
-end

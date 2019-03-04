@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_150931) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attributes", force: :cascade do |t|
+  create_table "characteristics", force: :cascade do |t|
     t.string "name"
     t.integer "level"
     t.integer "decr"
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2019_03_04_150931) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pet_attributes", force: :cascade do |t|
+  create_table "pet_characteristics", force: :cascade do |t|
     t.integer "pet_id"
-    t.integer "attribute_id"
+    t.integer "characteristic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
