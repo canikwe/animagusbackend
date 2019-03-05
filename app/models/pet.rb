@@ -3,7 +3,7 @@ class Pet < ApplicationRecord
   has_many :characteristics, through: :pet_characteristics
 
   def kill_clock
-    self.created_at + (60 * 5)
+    self.created_at + (60 * 1)
   end
 
 
