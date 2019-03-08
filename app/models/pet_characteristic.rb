@@ -6,22 +6,22 @@ class PetCharacteristic < ApplicationRecord
 
     if self.characteristic.name == "Hunger"
       if self.check_time == nil
-        Time.now + (20 * 1)
+        Time.now + self.characteristic.interval
       else
-        self.check_time + (20 * 1)
+        self.check_time + self.characteristic.interval
       end
     elsif self.characteristic.name == "Thirst"
       if self.check_time == nil
-        Time.now + (10 * 1)
+        Time.now + self.characteristic.interval
       else
-        self.check_time + (10 * 1)
+        self.check_time + self.characteristic.interval
       end
       # self.created_at + (60 * 4)
     elsif self.characteristic.name == "Sleepiness"
       if self.check_time == nil
-        Time.now + (30 * 1)
+        Time.now + self.characteristic.interval
       else
-        self.check_time + (30 * 1)
+        self.check_time + self.characteristic.interval
       end
     end
   end
