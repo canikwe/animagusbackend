@@ -1,5 +1,5 @@
 # Animagus
-Animagus is a project web application utilizing a Rails API backend to serialize app data for the frontend and persist game information to the database.
+Animagus is a web application utilizing a Rails API backend to serialize app data for the frontend and persist game information to the database.
 
 ## Demo
 [Animagus](https://youtu.be/wRHNADaTdS0)
