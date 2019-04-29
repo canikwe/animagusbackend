@@ -1,4 +1,4 @@
-# Animagus
+# Animagus | Backend
 Animagus is a web application utilizing a Rails API backend to serialize app data for the frontend and persist game information to the database.
 
 ## Demo
