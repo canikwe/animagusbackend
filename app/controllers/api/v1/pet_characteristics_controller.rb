@@ -2,12 +2,14 @@ class Api::V1::PetCharacteristicsController < ApplicationController
   before_action :get_pet_characteristic
 
   def update
-    render json: @pet_characteristic.update(pet_characteristic_params)
+    
+    @pet_characteristic.update(pet_characteristic_params)
+    render json: @pet_characteristic
   end
 
   private
   def pet_characteristic_params
-    params.require(:pet_characteristic).permit(:check_time)
+    params.require(:pet_characteristic).permit(:check_time, :action_status)
   end
 
   def get_pet_characteristic
