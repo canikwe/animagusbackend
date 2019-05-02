@@ -10,9 +10,9 @@ Pet.destroy_all
 PetCharacteristic.destroy_all
 
 # level one characteristics
-Characteristic.create(name: "Hunger", level: 1, decr: 10, incr: 10, interval: 10000, action: "feed", action_time: "hungerTime", action_verb: "fed")
-Characteristic.create(name: "Cleanliness", level: 1, decr: 5, incr: 5, interval: 5000, action: "clean", action_time: "cleanTime", action_verb: "cleaned")
-Characteristic.create(name: "Bordeom", level: 1, decr: 15, incr: 15, interval: 15000, action: "play with", action_time: "playTime", action_verb: "played")
+Characteristic.create(name: "Feed", level: 1, decr: 10, incr: 10, interval: 20000, action: "feed", action_time: "hungerTime", action_verb: "fed")
+Characteristic.create(name: "Clean", level: 1, decr: 5, incr: 5, interval: 30000, action: "clean", action_time: "cleanTime", action_verb: "cleaned")
+Characteristic.create(name: "Play", level: 1, decr: 15, incr: 3, interval: 10000, action: "play with", action_time: "playTime", action_verb: "played")
 
 # level two characteristics
 Characteristic.create(name: "Thirst", level: 2, decr: 5, incr: 5, interval: 10000, action: "give water to", action_time: "drinkTime", action_verb: "slacked")

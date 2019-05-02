@@ -25,7 +25,7 @@ class Api::V1::PetsController < ApplicationController
   end
 
   def update
-    
+
     @pet.update(pet_params)
     render json: @pet
   end
@@ -33,7 +33,7 @@ class Api::V1::PetsController < ApplicationController
 
   private
   def pet_params
-    params.require(:pet).permit(:name, :age, :image, :happiness, :active_status, :bio)
+    params.require(:pet).permit(:name, :age, :image, :happiness, :active_status, :bio, :level)
   end
 
   def get_pet
