@@ -1,5 +1,5 @@
 class PetCharacteristicSerializer < ActiveModel::Serializer
-  attributes :id, :pet_id, :characteristic_id, :name, :level, :decr, :incr, :action, :calculate_check_time, :created_at, :check_time, :action_time, :action_status, :action_verb, :interval
+  attributes :id, :pet_id, :characteristic_id, :name, :level, :decr, :incr, :action, :calculate_check_time, :created_at, :check_time, :action_status, :action_verb, :interval
 
   def name
     self.object.characteristic.name
@@ -23,10 +23,6 @@ class PetCharacteristicSerializer < ActiveModel::Serializer
 
   def action_verb
     self.object.characteristic.action_verb
-  end
-
-  def action_time
-    self.object.characteristic.action_time
   end
 
   def interval
