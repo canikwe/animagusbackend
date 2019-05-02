@@ -25,6 +25,7 @@ class Api::V1::PetsController < ApplicationController
   end
 
   def update
+    
     @pet.update(pet_params)
     render json: @pet
   end

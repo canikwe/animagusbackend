@@ -2,7 +2,6 @@ class Api::V1::PetCharacteristicsController < ApplicationController
   before_action :get_pet_characteristic
 
   def update
-    
     render json: @pet_characteristic.update(pet_characteristic_params)
   end
 
