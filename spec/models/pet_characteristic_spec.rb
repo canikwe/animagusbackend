@@ -17,7 +17,7 @@ RSpec.describe PetCharacteristic, type: :model do
     PetCharacteristic.destroy_all
   end
 
-  context 'calculate_check_time' do
+  context 'when #calculate_check_time is called' do
     it 'displays the correct time without error' do
       @pet = Pet.first
       expect(PetCharacteristic.first.calculate_check_time).to be > Time.now

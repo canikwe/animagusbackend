@@ -29,4 +29,10 @@ RSpec.describe Pet, type: :model do
       expect(@pet.pet_characteristics.first.characteristic.name).to eq('Feed')
     end
   end
+
+  context 'when #kill_clock is called' do
+    it 'displays the correct time without error' do
+      expect(@pet.kill_clock).to be > Time.now
+    end
+  end
 end
