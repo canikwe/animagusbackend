@@ -26,7 +26,7 @@ RSpec.describe Pet, type: :model do
     it 'creates new pet_characteristics for the pet corresponding to the correct level' do
       @pet.add_characteristics(1)
       expect(@pet.pet_characteristics.length).to eq(3)
-      # expect(@pet.pet_characteristics.first.name).to eq('Feed')
+      expect(@pet.pet_characteristics.first.name).to eq('Feed')
     end
   end
 end
