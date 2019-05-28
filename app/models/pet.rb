@@ -6,5 +6,13 @@ class Pet < ApplicationRecord
     self.created_at + (60 * 1)
   end
 
+  def add_characteristics(level)
+    Characteristic.all.each do |char|
+      if char.level == level
+        PetCharacteristic.create(pet_id: self.id, characteristic_id: char.id)
+      end
+    end
+  end
+
 
 end
