@@ -9,7 +9,7 @@ RSpec.describe Pet, type: :model do
   end
 
   after(:all) do
-    puts 'after all ran'
+    puts 'test db cleaned'
     Characteristic.destroy_all
     Pet.destroy_all
     PetCharacteristic.destroy_all
@@ -26,7 +26,7 @@ RSpec.describe Pet, type: :model do
     it 'creates new pet_characteristics for the pet corresponding to the correct level' do
       @pet.add_characteristics(1)
       expect(@pet.pet_characteristics.length).to eq(3)
-      expect(@pet.pet_characteristics.first.name).to eq('Feed')
+      expect(@pet.pet_characteristics.first.characteristic.name).to eq('Feed')
     end
   end
 end
