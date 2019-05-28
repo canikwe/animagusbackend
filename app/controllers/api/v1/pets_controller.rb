@@ -13,11 +13,6 @@ class Api::V1::PetsController < ApplicationController
     @pet = Pet.new
     @pet = Pet.create(pet_params)
     if @pet.save
-      # Characteristic.all.each do |char|
-      #   if char.level == 1
-      #     PetCharacteristic.create(pet_id: @pet.id, characteristic_id: char.id)
-      #   end
-      # end
       @pet.add_characteristics(1)
       render json: @pet, status: :accepted
     else

@@ -20,6 +20,10 @@ RSpec.describe Pet, type: :model do
       expect(@pet.name).to eq("sprinkles")
       expect(@pet.age).to eq(10)
     end
+
+    it 'does not have any pet_characteristics' do
+      expect(@pet.pet_characteristics.length).to eq(0)
+    end
   end
 
   context 'when #add_characteristics is called' do
