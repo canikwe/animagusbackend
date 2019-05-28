@@ -9,7 +9,7 @@ RSpec.describe Pet, type: :model do
   end
 
   after(:all) do
-    puts 'test db cleaned'
+    puts 'pet tests finished -- test db cleaned'
     Characteristic.destroy_all
     Pet.destroy_all
     PetCharacteristic.destroy_all
