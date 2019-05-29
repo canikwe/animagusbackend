@@ -14,7 +14,7 @@ class Api::V1::PetsController < ApplicationController
     @pet = Pet.create(pet_params)
     if @pet.save
       @pet.add_characteristics(1)
-      render json: @pet, status: :accepted
+      render json: @pet, status: :created
     else
       render json: {errors: @pet.errors.full_messages}, status: :unprocessible_entity
     end
