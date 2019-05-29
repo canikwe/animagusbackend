@@ -25,9 +25,12 @@ class Api::V1::PetsController < ApplicationController
   end
 
   def update
-
-    @pet.update(pet_params)
-    render json: @pet
+    if @pet.present?
+      @pet.update(pet_params)
+      render json: @pet
+    else
+      head :not_found
+    end
   end
 
 
