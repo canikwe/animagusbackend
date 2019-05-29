@@ -6,7 +6,11 @@ class Api::V1::PetsController < ApplicationController
   end
 
   def show
-    render json: @pet
+    if @pet.present?
+      render json: @pet, status: :ok
+    else
+      head :not_found
+    end
   end
 
   def create
@@ -33,7 +37,7 @@ class Api::V1::PetsController < ApplicationController
   end
 
   def get_pet
-    @pet = Pet.find(params[:id])    
+    @pet = Pet.find_by(id: params[:id])    
   end
 
 end
