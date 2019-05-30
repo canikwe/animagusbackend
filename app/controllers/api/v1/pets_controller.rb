@@ -2,7 +2,7 @@ class Api::V1::PetsController < ApplicationController
   before_action :get_pet, only: [:show, :update]
   def index
     @pets = Pet.all
-    render json: @pets
+    render json: @pets, status: :ok
   end
 
   def show
@@ -20,7 +20,7 @@ class Api::V1::PetsController < ApplicationController
       @pet.add_characteristics(1)
       render json: @pet, status: :created
     else
-      render json: {errors: @pet.errors.full_messages}, status: :unprocessible_entity
+      render json: {errors: @pet.errors.full_messages}, status: :bad_request
     end
   end
 
