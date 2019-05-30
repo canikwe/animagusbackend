@@ -5,6 +5,7 @@ RSpec.describe Api::V1::PetsController, type: :controller do
     it 'sends back a success status' do
       get :index
       expect(response.status).to eq(200)
+      expect(response.content_type).to eq 'application/json'
     end
   end
 
