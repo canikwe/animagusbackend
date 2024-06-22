@@ -17,6 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: <%= ENV['PG_HOST'] %>
+  username: postgres
+  password: <%= ENV['PG_PASSWORD'] %>
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -82,4 +85,4 @@ production:
   <<: *default
   database: animagus_production
   username: animagus
-  password: <%= ENV['ANIMAGUS_DATABASE_PASSWORD'] %>
+  password: <%= ENV['PG_PASSWORD'] %>
