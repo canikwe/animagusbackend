@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+# Start the docker containers.
+# The -d flag runs the containers in the background, so you can continue to use the terminal.
+# To see terminal output, omit the -d flag or run `docker container attach <container_id>``
+docker compose up "$@"
