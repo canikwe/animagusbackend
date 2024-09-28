@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rack-cors'
 
 # Create unit tests
-# gem 'rspec'
+gem 'rspec'
 
 gem 'active_model_serializers'
 
