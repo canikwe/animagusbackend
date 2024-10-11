@@ -1,4 +1,14 @@
 #!/bin/bash
 set -e
 
-docker exec -it api rails c -e test
+CONTAINER_ID=$(docker ps -qf "name=api")
+
+if [ -z "$CONTAINER_ID" ]
+then
+  echo "== No container found. Opening test console in new container =="
+  docker compose run api rails c -e test "$@"
+else
+  echo "== Container $CONTAINER_ID found. Opening test console =="
+  docker exec -it "$CONTAINER_ID" rails c -e test "$@"
+fi
+

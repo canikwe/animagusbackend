@@ -2,4 +2,4 @@
 set -e
 
 # stop the docker containers
-docker-compose down
+docker compose down
