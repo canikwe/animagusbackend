@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+CONTAINER_ID=$(docker ps -qf "name=api")
+
+if [ -z "$CONTAINER_ID" ]
+then
+  echo "== No container found. Running docker compose up =="
+  docker compose run api bundle exec rspec -f d "$@"
+else
+  echo "== Container $CONTAINER_ID found. Running tests =="
+  docker exec -it "$CONTAINER_ID" bundle exec rspec -f d "$@"
+fi

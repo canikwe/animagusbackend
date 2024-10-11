@@ -1,5 +1,6 @@
 class Api::V1::PetsController < ApplicationController
   before_action :get_pet, only: [:show, :update]
+  
   def index
     @pets = Pet.all
     render json: @pets, status: :ok
