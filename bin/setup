@@ -5,4 +5,4 @@ set -e
 docker compose build --no-cache
 
 # create/reset the database with rails
-docker compose run api bin/setup
+docker compose run api bin/app_setup
