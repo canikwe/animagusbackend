@@ -9,5 +9,10 @@ jobs:
       - uses: actions/checkout@v4.2.1
       - name: Set up application
         run: bin/setup
+        env:
+          PG_HOST: localhost
+          PG_PASSWORD: postgres
+          PG_USER: postgres
+          PG_PORT: 5432
 
 
