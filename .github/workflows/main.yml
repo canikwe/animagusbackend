@@ -3,7 +3,7 @@ name: ci
 on: push
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.1
@@ -14,14 +14,7 @@ jobs:
           PG_PASSWORD: postgres
           PG_USER: postgres
           PG_PORT: 5432
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v4.2.1
       - name: Start Container in Background
         run: bin/up -d
       - name: Run Tests
         run: bin/test
-
-
