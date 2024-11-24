@@ -18,8 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Sanity check
-        run: ls
+      - uses: actions/checkout@v4.2.1
       - name: Start Container in Background
         run: bin/up -d
       - name: Run Tests
