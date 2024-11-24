@@ -7,14 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.1
-      - name: Build Application
-        run: bin/setup
+      - name: Build and start container in background
+        run: bin/setup && bin/up -d
         env:
           PG_HOST: localhost
           PG_PASSWORD: postgres
           PG_USER: postgres
           PG_PORT: 5432
-      - name: Start Container in Background
-        run: bin/up -d
       - name: Run Tests
         run: bin/test
