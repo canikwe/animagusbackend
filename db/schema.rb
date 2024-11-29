@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_11_29_174203) do
-
+ActiveRecord::Schema[7.0].define(version: 2024_11_29_194403) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,8 +20,8 @@ ActiveRecord::Schema.define(version: 2024_11_29_174203) do
     t.integer "decr"
     t.integer "incr"
     t.integer "recurrence"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.string "action"
     t.string "action_verb"
     t.integer "interval"
@@ -31,9 +30,9 @@ ActiveRecord::Schema.define(version: 2024_11_29_174203) do
   create_table "pet_characteristics", force: :cascade do |t|
     t.integer "pet_id"
     t.integer "characteristic_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "check_time"
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "check_time", precision: nil
     t.boolean "action_status", default: false
   end
 
@@ -42,8 +41,8 @@ ActiveRecord::Schema.define(version: 2024_11_29_174203) do
     t.integer "age"
     t.integer "happiness", default: 50
     t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.text "bio"
     t.boolean "active_status", default: true
     t.integer "level", default: 1
