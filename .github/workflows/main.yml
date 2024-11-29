@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.1
       - name: Build and start container in background
-        run: bin/setup && bin/up -d
+        run: bin/setup_docker && bin/up -d
         env:
           PG_HOST: localhost
           PG_PASSWORD: postgres
