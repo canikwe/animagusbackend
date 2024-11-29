@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+# build the docker image
+docker compose build --no-cache
+
+# create/reset the database with rails
+docker compose run api bin/setup
