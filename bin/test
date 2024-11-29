@@ -9,5 +9,5 @@ then
   docker compose run api bundle exec rspec -f d "$@"
 else
   echo "== Container $CONTAINER_ID found. Running tests =="
-  docker exec -it "$CONTAINER_ID" bundle exec rspec -f d "$@"
+  docker exec "$CONTAINER_ID" bundle exec rspec -f d "$@"
 fi
