@@ -1,4 +1,4 @@
-FROM ruby:2.7.7-alpine3.15
+FROM ruby:3.1-alpine3.19
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ RUN apk add --update --no-cache \
   tzdata
 
 # Install ruby dependencies
-RUN gem install bundler -v 1.17.2 \
+RUN gem install bundler \
   && bundle install
 
 # Add a script to be executed every time the container starts.
