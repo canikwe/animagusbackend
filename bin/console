@@ -9,7 +9,7 @@ then
   docker compose run api rails c "$@"
 else
   echo "== Container $CONTAINER_ID found. Opening dev console =="
-  docker exec "$CONTAINER_ID" rails c "$@"
+  docker exec -it "$CONTAINER_ID" rails c "$@"
 fi
 
 
