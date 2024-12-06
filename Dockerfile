@@ -1,4 +1,4 @@
-FROM ruby:3.1-alpine3.19
+FROM ruby:3.1-alpine3.19 AS build
 
 WORKDIR /app
 
@@ -26,3 +26,12 @@ EXPOSE 3000
 # Configure the main process to run when running the image
 CMD ["rails", "server", "-b", "0.0.0.0"]
 
+FROM build AS actioncable
+# Copy the application code
+COPY . /app/
+
+# Expose the Action Cable server port
+EXPOSE 28080
+
+# Command to run the Action Cable server
+CMD ["bundle", "exec", "puma", "-p", "28080", "cable/config.ru"]
